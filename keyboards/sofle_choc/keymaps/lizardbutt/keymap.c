@@ -172,7 +172,6 @@ bool oled_task_user(void) {
     // This seems redundant, but it's added to reset the OLED after coming back from AFK
 	if(last_input_activity_elapsed() < OLED_SCREENSAVER_TIMEOUT && oled_screensaver_active == true) {
         oled_screensaver_active = false;
-        rgblight_enable();
         oled_on();
         oled_clear();
     }
