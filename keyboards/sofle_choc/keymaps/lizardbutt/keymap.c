@@ -14,7 +14,6 @@ uint8_t current_frame = 0;
 // Import the stuff you need *after* defining globals... Duh
 #include "triforce.h"
 //#include "ivy.h"
-// comment
 // Current KB Layers and their names
 enum sofle_layers {
     _BASE,
@@ -35,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+-----+------+------+------+-----| Mute   |    | P/P   |------+------+------+------+------+------|
  * | LCTRL  | Z   | X    | C    | V    | B   |--------|    |-------| N    | M    | = +  | , <  | . >  | / ?  |
  * `-----------------------------------------/       /      \      \-----------------------------------------'
- *         | LGUI | LAlt | MO 1 | Backspc | / Enter /        \ MO 1 \  | Space | MO 2 | RGUI | MO 3 |
+ *         | LGUI | LAlt | MO 1 | Backspc | / Enter /        \ MO 1 \  | Space | MO 2 |      | MO 3 |
  *         |      |      |      |         |/       /          \      \ |       |      |      |      |
  *         '------------------------------''------'            '------''----------------------------'       */
 [_BASE] = LAYOUT(
@@ -46,32 +45,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                  KC_LGUI, KC_LALT, MO(_FUNC), KC_BSPC, KC_ENT,     MO(_FUNC), KC_SPACE, MO(_CHARACTERS), KC_RGUI,  MO(_LAYERSWITCH)
 ),
 /* Function
- * ,--------------------------------------------.                     ,------------------------------------------.
- * | F1     | F2   | F3   | F4   | F5   | F6    |                     |      |      |      |      |      | NMLCK |
- * |--------+------+------+------+------+-------|                     |------+------+------+------+------+-------|
- * | F7     | F8   | F9   | F10  | F11  | F12   |                     |      | 7    | 8    | 9    |      |       |
- * |--------+------+------+------+------+-------|                     |------+------+------+------+------+-------|
- * | LShift | CAPS | +    | -    |      |       |--------.    ,-------| DEL  | 4    | 5    | 6    | 0    |       |
- * |--------+------+------+------+------+-------| TOGRGB |    |       |------+------+------+------+------+-------|
- * | CTRL   | ALT  | *    | /    | =    |       |--------|    |-------|      | 1    | 2    | 3    | .    | PRSCR |
- * `--------------------------------------------/       /      \      \------------------------------------------'
+ * ,--------------------------------------------.                     ,-------------------------------------------.
+ * | F1     | F2   | F3   | F4   | F5   | F6    |                     |       |      |      |      |      |       |
+ * |--------+------+------+------+------+-------|                     |-------+------+------+------+------+-------|
+ * | F7     | F8   | F9   | F10  | F11  | F12   |                     | NMLCK | 7    | 8    | 9    |      |       |
+ * |--------+------+------+------+------+-------|                     |-------+------+------+------+------+-------|
+ * | LShift | CAPS | +    | -    |      |       |--------.    ,-------| DEL   | 4    | 5    | 6    | 0    |       |
+ * |--------+------+------+------+------+-------| TOGRGB |    |       |-------+------+------+------+------+-------|
+ * | CTRL   | ALT  | *    | /    | =    |       |--------|    |-------| PNTSC | 1    | 2    | 3    | .    |       |
+ * `--------------------------------------------/       /      \      \-------------------------------------------'
  *            | PT    | PT   |     | Backspc | / Enter /        \      \  |      | CTRL | ALT  | DEL  |
  *            |       |      |     |         |/       /          \      \ |      |      |      |      |
  *            '------------------------------''------'            '------''---------------------------'            */
 [_FUNC] = LAYOUT(
-  KC_F1,   KC_F2,   KC_F3,          KC_F4,       KC_F5,    KC_F6,                         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_NUM_LOCK,
-  KC_F7,   KC_F8,   KC_F9,          KC_F10,      KC_F11,   KC_F12,                        XXXXXXX, KC_P7,   KC_P8,   KC_P9,   XXXXXXX, XXXXXXX,
-  KC_LSFT, KC_CAPS, KC_KP_PLUS,     KC_KP_MINUS, XXXXXXX,  XXXXXXX,                       KC_DEL,  KC_P4,   KC_P5,   KC_P6,   KC_P0,   XXXXXXX,
-  KC_LCTL, KC_LALT, KC_KP_ASTERISK, KC_KP_SLASH, KC_EQUAL, XXXXXXX, UG_TOGG,     XXXXXXX, XXXXXXX, KC_P1,   KC_P2,   KC_P3,   KC_PDOT, KC_PSCR,
-            		KC_TRNS,        KC_TRNS,     XXXXXXX,  KC_BSPC, KC_ENT,      XXXXXXX, XXXXXXX, KC_LCTL, KC_RALT, KC_DEL
+  KC_F1,   KC_F2,   KC_F3,          KC_F4,       KC_F5,    KC_F6,                         XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  KC_F7,   KC_F8,   KC_F9,          KC_F10,      KC_F11,   KC_F12,                        KC_NUM_LOCK, KC_P7,   KC_P8,   KC_P9,   XXXXXXX, XXXXXXX,
+  KC_LSFT, KC_CAPS, KC_KP_PLUS,     KC_KP_MINUS, XXXXXXX,  XXXXXXX,                       KC_DEL,      KC_P4,   KC_P5,   KC_P6,   KC_P0,   XXXXXXX,
+  KC_LCTL, KC_LALT, KC_KP_ASTERISK, KC_KP_SLASH, KC_EQUAL, XXXXXXX, UG_TOGG,     XXXXXXX, KC_PSCR,     KC_P1,   KC_P2,   KC_P3,   KC_PDOT, KC_PSCR,
+                    KC_TRNS,        KC_TRNS,     XXXXXXX,  KC_BSPC, KC_ENT,      XXXXXXX, XXXXXXX,     KC_LCTL, KC_RALT, KC_DEL
 ),
 /* Characters
  * ,------------------------------------------.                    ,-------------------------------------------.
- * |      |      |      | [    | ]    | *     |                    |       |      |      |       |      |      |
+ * | DEL  |      |      | [    | ]    | *     |                    |       |      |      |       |      |      |
  * |------+------+------+------+------+-------|                    |-------+------+------+-------+------+------|
- * | `    | '    | "    | (    | )    | +     |                    |       |      | Up   |       | PGUP |      |
+ * | `    | '    | "    | (    | )    | +     |                    |       |      | Up   |       |      | PGUP |
  * |------+------+------+------+------+-------|                    |-------+------+------+-------+------+------|
- * | PT   | ~    | $    | {    | }    | -     |--------.   ,-------| DEL   | Left | Down | Right | PGDN |      |
+ * | PT   | ~    | $    | {    | }    | -     |--------.   ,-------|       | Left | Down | Right |      | PGDN |
  * |------+------+------+------+------+-------|        |   |       |-------+------+------+-------+------+------|
  * | PT   | :    | @    | <    | >    | =     |--------|   |-------|       |      |      |       |      |      |
  * `------------------------------------------/       /     \      \-------------------------------------------'
@@ -79,9 +78,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            |      |      |    |         |/       /         \      \ |      |      |       |       |
  *            '----------------------------''------'           '------''-----------------------------'         */
 [_CHARACTERS] = LAYOUT(
-   XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, KC_ASTR,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,
-   KC_GRV,  KC_QUOT, KC_DQT,  KC_LPRN, KC_RPRN, KC_PLUS,                     XXXXXXX, XXXXXXX, KC_UP,   XXXXXXX,  KC_PGUP, XXXXXXX,
-   KC_TRNS, KC_TILD, KC_DLR,  KC_LCBR, KC_RCBR, KC_MINS,                     KC_DEL,  KC_LEFT, KC_DOWN, KC_RIGHT, KC_PGDN, XXXXXXX,
+   KC_DEL,  XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, KC_ASTR,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,
+   KC_GRV,  KC_QUOT, KC_DQT,  KC_LPRN, KC_RPRN, KC_PLUS,                     XXXXXXX, XXXXXXX, KC_UP,   XXXXXXX,  XXXXXXX, KC_PGUP,
+   KC_TRNS, KC_TILD, KC_DLR,  KC_LCBR, KC_RCBR, KC_MINS,                     XXXXXXX, KC_LEFT, KC_DOWN, KC_RIGHT, XXXXXXX, KC_PGDN,
    KC_TRNS, KC_COLN, KC_AT,   KC_LABK, KC_RABK, KC_EQUAL, KC_TRNS,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,
                      KC_TRNS, KC_TRNS, XXXXXXX, KC_BSPC,  KC_ENT,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 ),
