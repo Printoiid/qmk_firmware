@@ -68,9 +68,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,------------------------------------------.                    ,-------------------------------------------.
  * | DEL  |      |      | [    | ]    | *     |                    |       |      |      |       |      |      |
  * |------+------+------+------+------+-------|                    |-------+------+------+-------+------+------|
- * | `    | '    | "    | (    | )    | +     |                    |       |      | Up   |       |      | PGUP |
+ * | `    | '    | "    | (    | )    | +     |                    |       |      | Up   |       | PGUP |      |
  * |------+------+------+------+------+-------|                    |-------+------+------+-------+------+------|
- * | PT   | ~    | $    | {    | }    | -     |--------.   ,-------|       | Left | Down | Right |      | PGDN |
+ * | PT   | ~    | $    | {    | }    | -     |--------.   ,-------|       | Left | Down | Right | PGDN |      |
  * |------+------+------+------+------+-------|        |   |       |-------+------+------+-------+------+------|
  * | PT   | :    | @    | <    | >    | =     |--------|   |-------|       |      |      |       |      |      |
  * `------------------------------------------/       /     \      \-------------------------------------------'
@@ -79,8 +79,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            '----------------------------''------'           '------''-----------------------------'         */
 [_CHARACTERS] = LAYOUT(
    KC_DEL,  XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, KC_ASTR,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,
-   KC_GRV,  KC_QUOT, KC_DQT,  KC_LPRN, KC_RPRN, KC_PLUS,                     XXXXXXX, XXXXXXX, KC_UP,   XXXXXXX,  XXXXXXX, KC_PGUP,
-   KC_TRNS, KC_TILD, KC_DLR,  KC_LCBR, KC_RCBR, KC_MINS,                     XXXXXXX, KC_LEFT, KC_DOWN, KC_RIGHT, XXXXXXX, KC_PGDN,
+   KC_GRV,  KC_QUOT, KC_DQT,  KC_LPRN, KC_RPRN, KC_PLUS,                     XXXXXXX, XXXXXXX, KC_UP,   XXXXXXX,  KC_PGUP, XXXXXXX,
+   KC_TRNS, KC_TILD, KC_DLR,  KC_LCBR, KC_RCBR, KC_MINS,                     XXXXXXX, KC_LEFT, KC_DOWN, KC_RIGHT, KC_PGDN, XXXXXXX,
    KC_TRNS, KC_COLN, KC_AT,   KC_LABK, KC_RABK, KC_EQUAL, KC_TRNS,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,
                      KC_TRNS, KC_TRNS, XXXXXXX, KC_BSPC,  KC_ENT,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 ),
