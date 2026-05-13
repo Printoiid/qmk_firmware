@@ -221,7 +221,7 @@ bool oled_task_user(void) {
     // If the OLED is on, but has been idle for a while, turn the screensaver on
     } else if(is_oled_on() && last_input_activity_elapsed() > OLED_SCREENSAVER_TIMEOUT) {
         oled_screensaver_active = true;
-		// ivy_animation();
+        ivy_animation();
         rgblight_mode(5);
         rgblight_sethsv(150, 255, 255);
         return false;
