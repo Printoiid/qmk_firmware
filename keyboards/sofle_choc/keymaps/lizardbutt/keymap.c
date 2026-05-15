@@ -72,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------|                    |-------+-------+-------+-------+------+------|
  * | PT   | ~    | $    | {    | }    | -     |--------.   ,-------| DEL   | Left  | Down  | Right | PGDN |      |
  * |------+------+------+------+------+-------|        |   |       |-------+-------+-------+-------+------+------|
- * | PT   | :    | @    | <    | >    | =     |--------|   |-------|       | GUIDN | MAGIC | GUIUP |      |      |
+ * | PT   | :    | @    | <    | >    | =     |--------|   |-------|       |       | MAGIC |       |      |      |
  * `------------------------------------------/       /     \      \---------------------------------------------'
  *            | PT   | PT   |    | Backspc | / Enter /       \      \  |      |      |       |       |
  *            |      |      |    |         |/       /         \      \ |      |      |       |       |
@@ -83,11 +83,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_CHARACTERS] = LAYOUT(
-   KC_DEL,  XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, KC_ASTR,                     XXXXXXX, XXXXXXX,       XXXXXXX,    XXXXXXX,       XXXXXXX, XXXXXXX,
-   KC_GRV,  KC_QUOT, KC_DQT,  KC_LPRN, KC_RPRN, KC_PLUS,                     KC_W,    KC_COMMA,      KC_UP,      KC_DOT,        KC_PGUP, XXXXXXX,
-   KC_TRNS, KC_TILD, KC_DLR,  KC_LCBR, KC_RCBR, KC_MINS,                     KC_DEL,  KC_LEFT,       KC_DOWN,    KC_RIGHT,      KC_PGDN, XXXXXXX,
-   KC_TRNS, KC_COLN, KC_AT,   KC_LABK, KC_RABK, KC_EQUAL, KC_TRNS,  XXXXXXX, XXXXXXX, LGUI(MS_WHLU), LGUI(KC_S), LGUI(MS_WHLD), XXXXXXX, XXXXXXX,
-                     KC_TRNS, KC_TRNS, XXXXXXX, KC_BSPC,  KC_ENT,   XXXXXXX, XXXXXXX, XXXXXXX,       XXXXXXX,    XXXXXXX
+   KC_DEL,  XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, KC_ASTR,                     XXXXXXX, XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX, XXXXXXX,
+   KC_GRV,  KC_QUOT, KC_DQT,  KC_LPRN, KC_RPRN, KC_PLUS,                     KC_W,    KC_COMMA, KC_UP,      KC_DOT,   KC_PGUP, XXXXXXX,
+   KC_TRNS, KC_TILD, KC_DLR,  KC_LCBR, KC_RCBR, KC_MINS,                     KC_DEL,  KC_LEFT,  KC_DOWN,    KC_RIGHT, KC_PGDN, XXXXXXX,
+   KC_TRNS, KC_COLN, KC_AT,   KC_LABK, KC_RABK, KC_EQUAL, KC_TRNS,  XXXXXXX, XXXXXXX, XXXXXXX,  LGUI(KC_S), XXXXXXX,  XXXXXXX, XXXXXXX,
+                     KC_TRNS, KC_TRNS, XXXXXXX, KC_BSPC,  KC_ENT,   XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,    XXXXXXX
 ),
 /* Games
  * ,-----------------------------------------.                     ,-----------------------------------------.
